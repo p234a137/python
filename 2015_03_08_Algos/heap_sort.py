@@ -1,6 +1,6 @@
 import heapq
 
-def heap_sort(items):
+def heap_sort(array):
     """ heap sort """
-    heapq.heapify(items)
-    items[:] = [heapq.heappop(items) for i in range(len(items))]
+    heapq.heapify(array)
+    array[:] = [heapq.heappop(array) for i in range(len(array))]

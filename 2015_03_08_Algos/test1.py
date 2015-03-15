@@ -1,12 +1,9 @@
-
-# http://danishmujeeb.com/blog/2014/01/basic-sorting-algorithms-implemented-in-python
-# Each sorting algorithm is implemented as a Python function, which will sort the list in-place. I used the following piece of code to test all the algorithms.
-
 import random
+
+array = [random.randint(-20, 60) for i in range(32)]
+
 from heap_sort import *
 
-random_items = [random.randint(-50, 100) for c in range(32)]
-
-print 'Before: ', random_items
-heap_sort(random_items)
-print 'After : ', random_items
+print ' array', array
+heap_sort(array)
+print 'sorted', array

@@ -1,15 +1,16 @@
-def quick_sort(items):
+def quick_sort(array):
     """ quick sort """
-    if len(items) > 1:
-        pivot_index = len(items) / 2
-        smaller_items = []
-        larger_items = []
-        for i, val in enumerate(items):
+    if len(array) > 1:
+        pivot_index = len(array)/2
+        pivot_value = array[pivot_index]
+        smaller = []
+        larger  = []
+        for i, val in enumerate(array):
             if i != pivot_index:
-                if val < items[pivot_index]:
-                    smaller_items.append(val)
+                if val < pivot_value:
+                    smaller.append(val)
                 else:
-                    larger_items.append(val)
-        quick_sort(smaller_items)
-        quick_sort(larger_items)
-        items[:] = smaller_items + [items[pivot_index]] + larger_items
+                    larger.append(val)
+        quick_sort(smaller)
+        quick_sort(larger)
+        array[:] = smaller + [pivot_value] + larger

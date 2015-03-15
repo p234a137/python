@@ -1,8 +1,8 @@
-def insertion_sort(items):
-    """ insertion sort"""
-    for i in range(1,len(items)):
-        j=i
+def insertion_sort(array):
+    """ insertion sort """
+    for i in range(len(array)):
+        j = i
         # push as much to the left as possible
-        while j > 0 and items[j] < items[j-1]:
-            items[j], items[j-1] = items[j-1], items[j]
+        while j > 0 and array[j] < array[j-1]:
+            array[j], array[j-1] = array[j-1], array[j]
             j -= 1

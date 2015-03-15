@@ -1,6 +1,6 @@
-def bubble_sort(items):
-    """ bubble sort algo """
-    for i in range(len(items)):
-        for j in range(len(items)-1-i):
-            if items[j] > items[j+1]:
-                items[j], items[j+1] = items[j+1], items[j] # swap
+def bubble_sort(array):
+    """ bubble sort """
+    for i in range(len(array)):
+        for j in range(len(array)-1-i):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
