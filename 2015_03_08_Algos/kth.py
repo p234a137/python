@@ -1,24 +1,26 @@
-def kth(sample, k):
-    pivot_index = len(sample)/2
-    pivot = sample[pivot_index]
-    below = [s for s in sample if s < pivot]
-    above = [s for s in sample if s > pivot]
-    i, j = len(sample) - len(below), len(above)
+def kth(array, k):
+    pivot_point = len(array) / 2
+    pivot_value = array[pivot_point]
+    below = [s for s in array if s < pivot_value]
+    above = [s for s in array if s > pivot_value]
+    a = len(above)
+    b = len(array) - len(below)
+    if k < a:
+        return kth(above, k)
+    elif k > b:
+        return kth(below, k-b)
+    else:
+        return pivot_value
 
-    if k < j:      return kth(above, k)
-    elif k > i:   return kth(below, k-i)
-    else:          return pivot
-
-
-""" test sorting algorithms """
 import random
 array = [random.randint(-100,100) for i in range(32)]
-print ' array', array
+print " array", array
 
-k = 19
-kth_value = kth(array, k)
-print 'k=',k, ' value = ',kth_value
+k = 3
+kval = kth(array, k)
+print "k = ",k, " kval = ",kval
 
-array.sort()
+from heap_sort import *
+heap_sort(array)
 print "sorted", array
-print array[len(array)-k]
+print array[len(array) -k - 1]
